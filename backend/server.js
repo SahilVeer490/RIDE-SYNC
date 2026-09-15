@@ -385,7 +385,7 @@ app.post("/api/join-ride", async (req, res) => {
 
         await ride.save();
 
-        res.status(20).json({
+        res.status(200).json({
             message: "Ride joined successfully!",
             ride: ride
         });
