@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Ride | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+
+        <a href="dashboard.html" class="dashboard-logo">
+            RIDE<span>SYNC</span>
+        </a>
+
+        <div class="dashboard-user">
+            <span id="userName">Rider</span>
+
+            <a href="dashboard.html" class="back-home">
+                ← Dashboard
+            </a>
+        </div>
+
+    </nav>
+
+
+    <main class="create-ride-page">
+
+        <section class="create-ride-heading">
+
+            <p class="dashboard-tagline">
+                NEW JOURNEY
+            </p>
+
+            <h1>
+                CREATE A<br>
+                <span>NEW RIDE.</span>
+            </h1>
+
+            <p>
+                Plan your journey, create your crew and get ready to ride.
+            </p>
+
+        </section>
+
+
+        <form id="createRideForm" class="ride-form">
+
+            <div class="input-group">
+
+                <label for="rideName">
+                    RIDE NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="rideName"
+                    placeholder="e.g. Mumbai Night Ride"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label for="startLocation">
+                        STARTING POINT
+                    </label>
+
+                    <input
+                        type="text"
+                        id="startLocation"
+                        placeholder="e.g. Bandra"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="destination">
+                        DESTINATION
+                    </label>
+
+                    <input
+                        type="text"
+                        id="destination"
+                        placeholder="e.g. Lonavala"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label for="rideDate">
+                        DATE
+                    </label>
+
+                    <input
+                        type="date"
+                        id="rideDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="rideTime">
+                        TIME
+                    </label>
+
+                    <input
+                        type="time"
+                        id="rideTime"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="maxRiders">
+                    MAXIMUM RIDERS
+                </label>
+
+                <input
+                    type="number"
+                    id="maxRiders"
+                    placeholder="e.g. 10"
+                    min="2"
+                    max="100"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="rideDescription">
+                    RIDE DESCRIPTION
+                </label>
+
+                <textarea
+                    id="rideDescription"
+                    placeholder="Tell your crew about this ride..."
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                CREATE RIDE
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <script src="create-ride.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Room | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+
+        <a href="dashboard.html" class="dashboard-logo">
+            RIDE<span>SYNC</span>
+        </a>
+
+        <div class="dashboard-user">
+
+            <span id="userName">Rider</span>
+
+            <a href="dashboard.html" class="back-home">
+                ← Dashboard
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="ride-room">
+
+        <!-- TOP RIDE HUD -->
+
+        <section class="ride-hud">
+
+            <div>
+                <p class="dashboard-tagline" id="rideTypeLabel">LIVE RIDE</p>
+
+                <h1 id="rideName">
+                    MUMBAI NIGHT RIDE
+                </h1>
+
+                <p id="rideRoute">
+                    Bandra → Lonavala
+                </p>
+            </div>
+
+            <div class="ride-status" id="rideStatus">
+
+                <span class="live-dot"></span>
+
+                <span id="rideStatusText">LIVE</span>
+
+            </div>
+
+            <div id="leaderControls" class="leader-controls">
+
+                <button id="startRideBtn" class="ride-control-btn">
+                    START RIDE
+                </button>
+
+                <button id="endRideBtn" class="ride-control-btn">
+                    END RIDE
+                </button>
+
+                <button id="updateRideBtn" class="ride-control-btn">
+                    UPDATE RIDE
+                </button>
+                <div id="updateRideForm" class="update-ride-form" style="display: none;">
+
+                <input type="text" id="updateRideName" placeholder="Ride Name">
+
+                <input type="text" id="updateStartLocation" placeholder="Starting Point">
+
+                <input type="text" id="updateDestination" placeholder="Destination">
+
+                <div class="form-row">
+                    <input type="date" id="updateRideDate">
+                    <input type="time" id="updateRideTime">
+                </div>
+
+                <input type="number" id="updateMaxRiders" placeholder="Maximum Riders" min="2" max="100">
+
+                <textarea id="updateRideDescription" placeholder="Ride Description" rows="4"></textarea>
+
+                <button id="saveRideChanges" class="ride-control-btn">
+                    SAVE CHANGES
+                </button>
+
+            </div>
+
+                <button id="deleteRideBtn" class="ride-control-btn">
+                    DELETE RIDE
+                </button>
+
+                <button id="analyticsRideBtn" class="ride-control-btn">
+                    VIEW ANALYTICS
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- SOS Button -->
+<button id="sosBtn" class="sos-btn">
+    🚨 SOS EMERGENCY
+</button>
+
+        
+
+        <!-- MAIN RIDE AREA -->
+
+        <section class="ride-main-grid">
+
+            <!-- MAP -->
+        <div class="live-map">
+
+            <div id="rideMap"></div>
+
+            <div class="nearby-section">
+                <h3>⛽ NEARBY FUEL STATIONS</h3>
+
+                <div id="fuelStations">
+                    <p>Find nearby fuel stations using your current location.</p>
+
+                    <button
+                        class="nearby-btn"
+                        onclick="findFuelStations()">
+                        ⛽ FIND FUEL STATIONS
+                    </button>
+                </div>
+            </div>
+
+            <div class="nearby-section">
+                <h3>🔧 NEARBY SERVICE CENTERS</h3>
+
+                <div id="serviceCenters">
+                    <p>Find nearby bike service centers using your current location.</p>
+
+                    <button
+                        class="nearby-btn"
+                        onclick="findServiceCenters()">
+                        🔧 FIND SERVICE CENTERS
+                    </button>
+                </div>
+            </div>
+
+            <div class="nearby-section">
+                <h3>🚨 SOS ALERTS</h3>
+
+                <div id="sosAlerts">
+                    <p>No SOS alerts yet.</p>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- CREW -->
+
+            <aside class="crew-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p class="card-label">YOUR CREW</p>
+
+                        <h2>RIDERS</h2>
+                    </div>
+
+                    <span id="riderCount">
+                        0 / 10
+                    </span>
+
+                </div>
+
+
+                <div id="crewList" class="crew-list">
+
+                    <div class="crew-member">
+
+                        <span class="rider-status"></span>
+
+                        <div>
+                            <strong>You</strong>
+                            <small>Rider</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- RIDE STATS -->
+
+        <section class="ride-stats">
+
+            <div class="stat-card">
+
+                <span>📍</span>
+
+                <div>
+                    <small>DISTANCE</small>
+                    <strong id="rideDistance">-- km</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>⏱</span>
+
+                <div>
+                    <small>RIDE TIME</small>
+                    <strong id="rideTime">00:00</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>⚡</span>
+
+                <div>
+                    <small>SPEED</small>
+                    <strong id="rideSpeed">-- km/h</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>🌦</span>
+
+                <div>
+                    <small>WEATHER</small>
+                    <strong id="rideWeather">--°C</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="ride-room.js"></script>
+
+</body>
+
+</html>
