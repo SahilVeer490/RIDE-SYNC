@@ -20,7 +20,7 @@ createRideForm.addEventListener("submit", async (event) => {
     const rideDescription = document.getElementById("rideDescription").value;
 
     try {
-        const response = await fetch("http://localhost:5000/api/create-ride", {
+        const response = await fetch("https://ride-sync-lgyl.onrender.com/api/create-ride", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

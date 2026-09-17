@@ -68,7 +68,7 @@ if (ride.status !== "live") {
         async function loadWeather(latitude, longitude) {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/weather?latitude=${latitude}&longitude=${longitude}`
+                `https://ride-sync-lgyl.onrender.com/api/weather?latitude=${latitude}&longitude=${longitude}`
             );
 
             const data = await response.json();
@@ -84,7 +84,7 @@ if (ride.status !== "live") {
     async function loadFuelStations(latitude, longitude) {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/fuel-stations?latitude=${latitude}&longitude=${longitude}`
+                `https://ride-sync-lgyl.onrender.com/api/fuel-stations?latitude=${latitude}&longitude=${longitude}`
             );
 
             const data = await response.json();
@@ -119,7 +119,7 @@ if (ride.status !== "live") {
     async function loadServiceCenters(latitude, longitude) {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/service-centers?latitude=${latitude}&longitude=${longitude}`
+                `https://ride-sync-lgyl.onrender.com/api/service-centers?latitude=${latitude}&longitude=${longitude}`
             );
 
             const data = await response.json();
@@ -224,7 +224,7 @@ if (ride.status !== "live") {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/update-location",
+                "https://ride-sync-lgyl.onrender.com/api/update-location",
                 {
                     method: "POST",
                     headers: {
@@ -277,7 +277,7 @@ async function loadRiderLocations() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/ride-locations/" +
+            "https://ride-sync-lgyl.onrender.com/api/ride-locations/" +
             ride.rideCode
         );
 
@@ -342,7 +342,7 @@ const startRideBtn = document.getElementById("startRideBtn");
 startRideBtn.addEventListener("click", async () => {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/start-ride/" + ride._id,
+            "https://ride-sync-lgyl.onrender.com/api/start-ride/" + ride._id,
             {
                 method: "PATCH",
                 headers: {
@@ -385,7 +385,7 @@ const endRideBtn = document.getElementById("endRideBtn");
 endRideBtn.addEventListener("click", async () => {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/end-ride/" + ride._id,
+            "https://ride-sync-lgyl.onrender.com/api/end-ride/" + ride._id,
             {
                 method: "PATCH",
                 headers: {
@@ -464,7 +464,7 @@ saveRideChanges.addEventListener("click", async () => {
 
     try {
         const response = await fetch(
-            "http://localhost:5000/api/update-ride/" + ride._id,
+            "https://ride-sync-lgyl.onrender.com/api/update-ride/" + ride._id,
             {
                 method: "PATCH",
                 headers: {
@@ -511,7 +511,7 @@ deleteRideBtn.addEventListener("click", async () => {
 
     try {
         const response = await fetch(
-            "http://localhost:5000/api/delete-ride/" + ride._id,
+            "https://ride-sync-lgyl.onrender.com/api/delete-ride/" + ride._id,
             {
                 method: "DELETE",
                 headers: {
@@ -548,7 +548,7 @@ async function loadRideCrew() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/ride-crew/" + ride.rideCode
+            "https://ride-sync-lgyl.onrender.com/api/ride-crew/" + ride.rideCode
         );
 
         const data = await response.json();
@@ -662,7 +662,7 @@ sosBtn.addEventListener("click", () => {
             try {
 
                 const response = await fetch(
-                    "http://localhost:5000/api/sos",
+                    "https://ride-sync-lgyl.onrender.com/api/sos",
                     {
                         method: "POST",
                         headers: {
@@ -725,7 +725,7 @@ sosBtn.addEventListener("click", () => {
 async function loadSOSAlerts() {
     try {
         const response = await fetch(
-            `http://localhost:5000/api/sos-alerts/${ride.rideCode}`
+            `https://ride-sync-lgyl.onrender.com/api/sos-alerts/${ride.rideCode}`
         );
 
         const data = await response.json();

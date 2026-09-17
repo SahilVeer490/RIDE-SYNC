@@ -16,7 +16,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 async function loadLiveRides() {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/live-rides/" + user.id
+            "https://ride-sync-lgyl.onrender.com/api/live-rides/" + user.id
         );
 
         const data = await response.json();
@@ -85,7 +85,7 @@ async function loadLiveRides() {
 
 function openLiveRide(rideCode) {
 
-    fetch("http://localhost:5000/api/live-rides/" + user.id)
+    fetch("https://ride-sync-lgyl.onrender.com/api/live-rides/" + user.id)
         .then(response => response.json())
         .then(data => {
 
@@ -116,7 +116,7 @@ loadLiveRides();
 async function loadUpcomingRides() {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/upcoming-rides/" + user.id
+            "https://ride-sync-lgyl.onrender.com/api/upcoming-rides/" + user.id
         );
 
         const data = await response.json();
@@ -194,7 +194,7 @@ async function loadUpcomingRides() {
 
 function openUpcomingRide(rideCode) {
 
-    fetch("http://localhost:5000/api/upcoming-rides/" + user.id)
+    fetch("https://ride-sync-lgyl.onrender.com/api/upcoming-rides/" + user.id)
         .then(response => response.json())
         .then(data => {
 

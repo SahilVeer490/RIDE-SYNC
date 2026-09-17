@@ -12,7 +12,7 @@ async function loadOldRides() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/old-rides/" + user.id
+            "https://ride-sync-lgyl.onrender.com/api/old-rides/" + user.id
         );
 
         const data = await response.json();

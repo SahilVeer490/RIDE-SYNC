@@ -16,7 +16,7 @@ joinRideForm.addEventListener("submit", async (event) => {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/join-ride", {
+        const response = await fetch("https://ride-sync-lgyl.onrender.com/api/join-ride", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
