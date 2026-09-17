@@ -1,3 +1,5 @@
+require("dotenv").config({ path: "./backend/.env" });
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -5,7 +7,9 @@ const User = require("./models/user");
 const bcrypt = require("bcryptjs");
 const Ride = require("./models/Ride");
 
-require("dotenv").config({ path: "./backend/.env" });
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const app = express();
 
@@ -220,6 +224,61 @@ app.get("/api/sos-alerts/:rideCode", async (req, res) => {
 
         res.status(500).json({
             message: "Unable to fetch SOS alerts.",
+            error: error.message
+        });
+    }
+});
+
+app.post("/api/ai-chat", async (req, res) => {
+    try {
+        const { message } = req.body;
+
+        if (!message) {
+            return res.status(400).json({
+                message: "Please enter a message."
+            });
+        }
+
+        const model = genAI.getGenerativeModel({
+            model: "gemini-2.5-flash"
+        });
+
+        const prompt = `
+You are RIDE SYNC AI, a specialized AI assistant for bikers and motorcycle riders.
+
+Your expertise includes:
+- Motorcycle riding and touring
+- Long-distance rides
+- Route and trip planning
+- Bike maintenance
+- Fuel and mileage
+- Riding safety
+- Weather-related riding advice
+- Touring gear
+- Group rides
+- Emergency riding situations
+
+Stay focused on motorcycles, riding, travel and rider safety.
+If a question is unrelated to riding, politely explain that you specialize in biking and rides.
+Give practical, simple and useful answers.
+For emergencies, prioritize immediate safety and contacting local emergency services.
+
+Rider's question:
+${message}
+`;
+
+        const result = await model.generateContent(prompt);
+        const reply = result.response.text();
+
+        res.status(200).json({
+            reply: reply
+        });
+
+    } catch (error) {
+        console.log("GEMINI AI ERROR:", error);
+
+        res.status(500).json({
+            message: "Unable to get AI response.",
             error: error.message
         });
     }
