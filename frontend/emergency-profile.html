@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Profile | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="emergency-profile-container">
+
+        <div class="emergency-profile-header">
+            <h1>🚨 EMERGENCY PROFILE</h1>
+            <p>Create your emergency rider profile.</p>
+        </div>
+
+        <form id="emergencyProfileForm">
+
+            <div class="form-group">
+                <label>Blood Group</label>
+
+                <select id="bloodGroup" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Emergency Contact Name</label>
+
+                <input
+                    type="text"
+                    id="emergencyContactName"
+                    placeholder="Enter emergency contact name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Emergency Contact Phone</label>
+
+                <input
+                    type="tel"
+                    id="emergencyContactPhone"
+                    placeholder="Enter emergency contact number"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Bike Model</label>
+
+                <input
+                    type="text"
+                    id="bikeModel"
+                    placeholder="Example: Himalayan 450"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Bike Number</label>
+
+                <input
+                    type="text"
+                    id="bikeNumber"
+                    placeholder="Example: MH01AB1234"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Emergency Note</label>
+
+                <textarea
+                    id="emergencyNote"
+                    placeholder="Any important emergency information..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="emergency-save-btn">
+                SAVE EMERGENCY PROFILE
+            </button>
+
+        </form>
+
+        <div id="profileMessage"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="emergency-profile.js"></script>
+
+</body>
+
+</html>

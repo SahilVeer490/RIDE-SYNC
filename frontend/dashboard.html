@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="dashboard-nav">
+
+        <a href="index.html" class="dashboard-logo">
+            RIDE<span>SYNC</span>
+        </a>
+
+        <div class="dashboard-user">
+
+            <span id="userName">Rider</span>
+
+            <button id="logoutBtn">
+                LOGOUT
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard">
+
+        <!-- WELCOME -->
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-tagline">
+                RIDER DASHBOARD
+            </p>
+
+            <h1>
+                WELCOME BACK,<br>
+                <span id="welcomeName">RIDER.</span>
+            </h1>
+
+            <p>
+                Manage your rides, create new journeys and join your crew.
+            </p>
+
+        </section>
+
+        <section class="live-rides-section">
+
+            <div class="live-rides-heading">
+                <p class="dashboard-tagline">CURRENTLY RUNNING</p>
+                <h2>LIVE <span>RIDES.</span></h2>
+            </div>
+
+            <div id="liveRidesContainer" class="live-rides-container">
+                <p class="no-rides">No live rides right now.</p>
+            </div>
+
+        </section>
+
+        <section class="upcoming-rides-section">
+
+            <div class="upcoming-rides-heading">
+                <p class="dashboard-tagline">NEXT JOURNEYS</p>
+                <h2>UPCOMING <span>RIDES.</span></h2>
+            </div>
+
+            <div id="upcomingRidesContainer" class="upcoming-rides-container">
+                <p class="no-rides">No upcoming rides.</p>
+            </div>
+
+        </section>
+
+        <div class="dashboard-card">
+            <h3>🤖 AI RIDING ASSISTANT</h3>
+            <p>Get help with bikes, rides, touring, maintenance and safety.</p>
+
+            <button onclick="window.location.href='ai-chat.html'">
+                OPEN AI ASSISTANT
+            </button>
+            
+        </div>
+
+        <div class="dashboard-card emergency-card">
+            <h3>🚨 EMERGENCY QR</h3>
+
+            <p>
+                Create your emergency profile and generate a QR code
+                for quick access during emergencies.
+            </p>
+
+            <button onclick="window.location.href='emergency-profile.html'">
+                CREATE EMERGENCY QR
+            </button>
+        </div>
+
+        <!-- DASHBOARD ACTIONS -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- OLD RIDES -->
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    🏍
+                </span>
+
+                <p class="card-label">
+                    YOUR HISTORY
+                </p>
+
+                <h2>
+                    Old Rides
+                </h2>
+
+                <p>
+                    View your previous rides and explore their ride analytics.
+                </p>
+
+                <a href="old-rides.html" class="dashboard-btn">
+                    VIEW RIDES →
+                </a>
+
+            </div>
+
+
+            <!-- CREATE RIDE -->
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    ＋
+                </span>
+
+                <p class="card-label">
+                    NEW JOURNEY
+                </p>
+
+                <h2>
+                    Create New Ride
+                </h2>
+
+                <p>
+                    Create a new group ride and bring your crew together.
+                </p>
+
+                <a href="create-ride.html" class="dashboard-btn">
+                    CREATE RIDE →
+                </a>
+
+            </div>
+
+
+            <!-- JOIN RIDE -->
+
+            <div class="dashboard-card">
+
+                <span class="dashboard-icon">
+                    🔗
+                </span>
+
+                <p class="card-label">
+                    JOIN CREW
+                </p>
+
+                <h2>
+                    Join Ride
+                </h2>
+
+                <p>
+                    Enter a ride code and join an existing group ride.
+                </p>
+
+                <a href="join-ride.html" class="dashboard-btn">
+                    JOIN RIDE →
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+<footer class="dashboard-footer">
+
+    <div class="footer-logo">
+        RIDE<span>SYNC</span>
+    </div>
+
+    <p>
+        RIDE TOGETHER. STAY CONNECTED.
+    </p>
+
+    <p class="footer-copy">
+        © 2026 RIDE SYNC. All rights reserved.
+    </p>
+
+</footer>
+
+</html>

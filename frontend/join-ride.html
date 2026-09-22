@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join Ride | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+
+        <a href="dashboard.html" class="dashboard-logo">
+            RIDE<span>SYNC</span>
+        </a>
+
+        <div class="dashboard-user">
+
+            <span id="userName">Rider</span>
+
+            <a href="dashboard.html" class="back-home">
+                ← Dashboard
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="join-ride-page">
+
+        <section class="join-ride-heading">
+
+            <p class="dashboard-tagline">
+                JOIN CREW
+            </p>
+
+            <h1>
+                JOIN A<br>
+                <span>RIDE.</span>
+            </h1>
+
+            <p>
+                Enter your ride code and join your crew.
+            </p>
+
+        </section>
+
+
+        <form id="joinRideForm" class="ride-form">
+
+            <div class="input-group">
+
+                <label for="rideCode">
+                    RIDE CODE
+                </label>
+
+                <input
+                    type="text"
+                    id="rideCode"
+                    placeholder="e.g. RS-K7X2PQ"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                JOIN RIDE
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <script src="join-ride.js"></script>
+
+</body>
+
+</html>

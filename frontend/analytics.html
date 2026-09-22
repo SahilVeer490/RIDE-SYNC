@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Analytics | RIDE SYNC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+
+        <a href="dashboard.html" class="dashboard-logo">
+            RIDE<span>SYNC</span>
+        </a>
+
+        <div class="dashboard-user">
+
+            <span id="userName">Rider</span>
+
+            <a href="old-rides.html" class="back-home">
+                ← Old Rides
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="analytics-page">
+
+        <section class="analytics-heading">
+
+            <p class="dashboard-tagline">
+                RIDE ANALYTICS
+            </p>
+
+            <h1>
+                RIDE<br>
+                <span id="analyticsRideName">ANALYTICS.</span>
+            </h1>
+
+            <p id="analyticsRoute">
+                Loading ride information...
+            </p>
+
+        </section>
+
+
+        <section class="analytics-grid">
+
+            <div class="analytics-card">
+                <small>TOTAL RIDERS</small>
+                <strong id="totalRiders">--</strong>
+            </div>
+
+            <div class="analytics-card">
+                <small>MAX RIDERS</small>
+                <strong id="maxRiders">--</strong>
+            </div>
+
+            <div class="analytics-card">
+                <small>DATE</small>
+                <strong id="rideDate">--</strong>
+            </div>
+
+            <div class="analytics-card">
+                <small>TIME</small>
+                <strong id="rideTime">--</strong>
+            </div>
+
+        </section>
+
+
+        <section class="analytics-details">
+
+            <div>
+                <small>STARTING POINT</small>
+                <strong id="startLocation">--</strong>
+            </div>
+
+            <div>
+                <small>DESTINATION</small>
+                <strong id="destination">--</strong>
+            </div>
+
+            <div>
+                <small>RIDE CODE</small>
+                <strong id="rideCode">--</strong>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="analytics.js"></script>
+
+</body>
+
+</html>
