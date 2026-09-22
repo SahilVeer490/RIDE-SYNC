@@ -935,3 +935,7 @@ app.post("/api/emergency-profile", async (req, res) => {
         });
     }
 });
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`RIDE SYNC Backend is running on port ${PORT}`);
+});
