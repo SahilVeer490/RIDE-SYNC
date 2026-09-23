@@ -16,6 +16,13 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static("frontend"));
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/../frontend/index.html");
+});
+
 function generateRiderCode() {
     return "RS-" + Math.random().toString(36).substring(2, 8).toUpperCase();
 }
